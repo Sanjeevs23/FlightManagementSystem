@@ -3,8 +3,9 @@ package com.cg.flightmgmt.service;
 import java.util.List;
 
 import com.cg.flightmgmt.dto.Airport;
+import com.cg.flightmgmt.exception.AirportNotFoundException;
 
 public interface AirportService {
     public List<Airport> viewAirport();
-    public Airport viewAirport(int airportCode);
+    public Airport viewAirport(int airportCode) throws AirportNotFoundException;
 }

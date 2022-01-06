@@ -1,5 +1,6 @@
 package com.cg.flightmgmt.dto;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.Table;
 @Table(name="Schedule_table")
 public class Schedule {
 	@Id
+	private BigInteger scheduleId;
 	private Airport sourceAirport;
 	private Airport destinationAirport;
 	private LocalDateTime arrivalTime;
@@ -19,13 +21,20 @@ public class Schedule {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Schedule(Airport sourceAirport, Airport destinationAirport, LocalDateTime arrivalTime,
+	public Schedule(BigInteger scheduleId, Airport sourceAirport, Airport destinationAirport, LocalDateTime arrivalTime,
 			LocalDateTime departureTime) {
 		super();
+		this.scheduleId = scheduleId;
 		this.sourceAirport = sourceAirport;
 		this.destinationAirport = destinationAirport;
 		this.arrivalTime = arrivalTime;
 		this.departureTime = departureTime;
+	}
+	public BigInteger getScheduleId() {
+		return scheduleId;
+	}
+	public void setScheduleId(BigInteger scheduleId) {
+		this.scheduleId = scheduleId;
 	}
 	public Airport getSourceAirport() {
 		return sourceAirport;
